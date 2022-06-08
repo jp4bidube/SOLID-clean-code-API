@@ -7,5 +7,5 @@ export type AddAccountModel = {
 };
 
 export interface AddAccount {
-  add(add: AddAccountModel): AccountModel;
+  add(add: AddAccountModel): Promise<AccountModel>;
 }
