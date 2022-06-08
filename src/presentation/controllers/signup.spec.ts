@@ -1,6 +1,4 @@
-import { InvalidParamError } from "../errors/invalid-param-error";
-import { MissingParamError } from "../errors/missing-param-error";
-import { ServerError } from "../errors/server-error";
+import { InvalidParamError, MissingParamError, ServerError } from "../errors";
 import { EmailValidator } from "../protocols/email-validator";
 import { SignUpController } from "./signup";
 
@@ -116,7 +114,7 @@ describe("SignUp Controller", () => {
   test("Should return 500 if EmailValidator throws", () => {
     class EmailValidatorStub implements EmailValidator {
       isValid(email: string): boolean {
-        throw new Error()
+        throw new Error();
       }
     }
     const emailValidatorStub = new EmailValidatorStub();
